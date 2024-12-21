@@ -276,6 +276,11 @@
   This project has shown the effectiveness of Gaussian Mixture Models (GMMs) for clustering human activity data from the UCI HAR dataset, while emphasizing the positive impact of dimensionality reduction techniques like PCA and UMAP. By exploring these methods, the project has provided a foundation for further research into the application of GMMs for activity recognition. This study also demonstrates the value of dimensionality reduction in enhancing model performance and computational efficiency, and also in visualizing the results of GMM clustering with the help of UMAP.
 </p>
 
+<p align="justify" style="margin: 10px 0;">
+For more detailed information on installation, running the project, and additional insights, please refer to the 
+<a href="GMM_HAR_Analysis.md"> README </a> file.
+</p>
+
 <!-- REFERENCES -->
 <h2 id="references" style="border-bottom: 2px solid #ddd; padding-bottom: 10px;"> :books: References</h2>
 
