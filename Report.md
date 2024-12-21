@@ -31,7 +31,7 @@
   </ol>
 </details>
 
-<div style="display: block; margin: 20px auto; width: 100%; height: 5px; background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);"></div>
+
 
 <!-- ABOUT THE PROJECT -->
 <h2 id="about-the-project" style="border-bottom: 2px solid #ddd; padding-bottom: 10px;"> :pencil: About The Project</h2>
@@ -40,7 +40,6 @@
   Gaussian Mixture Models (GMMs) are advantageous for clustering tasks due to their probabilistic framework, which allows for a robust interpretation of data distributions. This is particularly useful in high-dimensional datasets like the UCI Human Activity Recognition dataset, where data points can be noisy and complex. GMMs can model the underlying data distribution effectively, providing a flexible approach to clustering that can adapt to the inherent variability in human activity data [1] [2].
 </p>
 
-<div style="display: block; margin: 20px auto; width: 100%; height: 5px; background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);"></div>
 
 <!-- HANDLING HIGH-DIMENSIONAL DATA -->
 <h2 id="handling-high-dimensional-data" style="border-bottom: 2px solid #ddd; padding-bottom: 10px;"> :fork_and_knife: Handling High-Dimensional Data</h2>
@@ -49,7 +48,6 @@
   GMMs are well-suited for high-dimensional data, as they can identify clusters embedded in different subspaces. This capability is crucial for datasets like the UCI Human Activity Recognition dataset, which contains numerous features derived from sensor data. To enhance clustering performance, I want to compare two different dimensionality reduction approaches, PCA and UMAP. These techniques aim to find low-dimensional representations of the data.
 </p>
 
-<div style="display: block; margin: 20px auto; width: 100%; height: 5px; background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);"></div>
 
 <!-- IMPORTANCE OF DIMENSIONALITY REDUCTION -->
 <h2 id="importance-of-dimensionality-reduction" style="border-bottom: 2px solid #ddd; padding-bottom: 10px;"> :cactus: Importance of Dimensionality Reduction</h2>
@@ -58,7 +56,6 @@
   Reducing the dimensionality of the dataset not only decreases computational load but also enhances model performance by eliminating redundant and irrelevant features. This leads to more efficient training and faster inference times. In the context of the UCI Human Activity Recognition dataset, dimensionality reduction has been shown to improve the performance of GMM-based systems by focusing on the most informative features, thereby increasing the accuracy of activity recognition [3] [4].
 </p>
 
-<div style="display: block; margin: 20px auto; width: 100%; height: 5px; background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);"></div>
 
 <!-- ENHANCING MODEL PERFORMANCE -->
 <h2 id="enhancing-model-performance" style="border-bottom: 2px solid #ddd; padding-bottom: 10px;"> :dart: Enhancing Model Performance</h2>
@@ -67,7 +64,6 @@
   Advanced dimensionality reduction techniques, such as those based on manifold learning, preserve the local geometry of the data, which is crucial for maintaining the integrity of the classification information. This approach ensures that the reduced feature space still accurately represents the original data's structure, leading to better clustering and classification outcomes [3] [2].
 </p>
 
-<div style="display: block; margin: 20px auto; width: 100%; height: 5px; background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);"></div>
 
 <!-- PRESERVING LOCAL GEOMETRY -->
 <h2 id="preserving-local-geometry" style="border-bottom: 2px solid #ddd; padding-bottom: 10px;"> :hammer: Preserving Local Geometry</h2>
@@ -76,19 +72,6 @@
   GMM clustering is a suitable choice for the UCI Human Activity Recognition dataset due to its ability to handle high-dimensional data and provide a probabilistic framework for clustering. Dimensionality reduction further enhances the effectiveness of GMMs by reducing computational complexity and improving model performance, making it a critical step in processing high-dimensional datasets like those used in human activity recognition.
 </p>
 
-<div style="display: block; margin: 20px auto; width: 100%; height: 5px; background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);"></div>
-
-<!-- REFERENCES -->
-<h2 id="references" style="border-bottom: 2px solid #ddd; padding-bottom: 10px;"> :books: References</h2>
-
-<ol>
-  <li>Zhao, Y., Shrivastava, A., & Tsui, K. Regularized Gaussian Mixture Model for High-Dimensional Clustering. IEEE Transactions on Cybernetics. 2019; 49. https://doi.org/10.1109/TCYB.2018.2846404</li>
-  <li>Popović, B., Janev, M., Krstanović, L., Simić, N., & Delić, V. Measure of Similarity between GMMs Based on Geometry-Aware Dimensionality Reduction. Mathematics. 2022 https://doi.org/10.3390/math11010175</li>
-  <li>San-Segundo-Hernández, R., Córdoba, R., Ferreiros, J., & D’Haro, L. Frequency features and GMM-UBM approach for gait-based person identification using smartphone inertial signals. Pattern Recognit. Lett.. 2016; 73. https://doi.org/10.1016/j.patrec.2016.01.008</li>
-  <li>Chen, Y., Wu, X., Li, T., Cheng, J., Ou, Y., & Xu, M. Dimensionality reduction of data sequences for human activity recognition. Neurocomputing. 2016; 210. https://doi.org/10.1016/j.neucom.2015.11.126</li>
-</ol>
-
-<div style="display: block; margin: 20px auto; width: 100%; height: 5px; background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);"></div>
 
 <!-- IMPLEMENTATION AND RESULTS -->
 <h2 id="implementation-and-results" style="border-bottom: 2px solid #ddd; padding-bottom: 10px;"> :sparkles: Implementation and Results</h2>
@@ -107,10 +90,7 @@
   </li>
   <li>
     <p align="justify" style="margin: 10px 0;">
-      <b>Handling Missing Values:</b> Before proceeding to the modeling stage, it was essential to check for any missing values in the dataset. The detect_missing_values function in the data_processing.py module was used for this step, along with the check_missing helper function. A heatmap, titled "Heatmap of NaN; Nan visualization," was generated to visually confirm the absence of missing values, with no colored cells shown to represent any NaN values. This result is shown by the check_missing.png plot and it ensures that we can proceed with subsequent steps without any problems related to the presence of missing values.
-    </p>
-    <p align="center" style="text-align: center;">
-      <img src="results/plots/check_missing.png" alt="Heatmap of Missing Values" style="display: block; margin: 0 auto;">
+        <b>Handling Missing Values:</b> Before proceeding to the modeling stage, it was essential to check for any missing values in the dataset. The detect_missing_values function in the data_processing.py module was used for this step, along with the check_missing helper function. This process confirmed that the dataset has no missing values, ensuring that all data points are complete and ready for analysis. This verification step is crucial for maintaining the integrity of the dataset and ensuring that the subsequent modeling processes are accurate and reliable.
     </p>
   </li>
   <li>
@@ -202,7 +182,6 @@
       <li>
         <p align="justify" style="margin: 10px 0;">
           <b>2D Density Plot of Scaled Features:</b> This plot, also generated using Plotly, shows the 2D density of the scaled features embedded by UMAP. It demonstrates the impact of scaling on the resulting structure, showing the resulting clusters after feature scaling. The clusters here are similarly well-separated and it is observable how it has a clear impact on the distribution of the clusters.
-          <img src="results/plots/umap_2d_density.png" alt="2D Density Plot of Scaled Features" style="display: block; margin: 0 auto;">
         </p>
         <p align="center" style="text-align: center;">
           <img src="results/plots/scaled_umap_2d_density.png" alt="2D Density UMAP Visualization of Scaled Raw Features" style="display: block; margin: 0 auto;">
@@ -255,9 +234,9 @@
     <p align="center" style="text-align: center;">
       <img src="results/plots/umap_cluster_evaluation_criteria.png" alt="Cluster Evaluation Criteria UMAP" style="display: block; margin: 0 auto;">
     </p>
-   
     <p align="justify" style="margin: 10px 0;">
-      The plots demonstrates that both the BIC and AIC values decrease sharply up to four clusters, with the rate of decrease slowing down after this point. This indicates that using four components for the GMM is an adequate number for this data. The optimal number of components is selected by looking for the "elbow" point in the curve.
+      The plots demonstrates that both the BIC and AIC values decrease sharply up to four clusters, with the rate of decrease slowing down after this point. This indicates that 
+      using four components for the GMM is an adequate number for this data. The optimal number of components is selected by looking for the "elbow" point in the curve.
     </p>
   </li>
   <li>
@@ -284,18 +263,28 @@
           <img src="results/plots/umap_scaled_cluster_assignments.png" alt="GMM Clustering Assignments on UMAP-Embedded Features" style="display: block; margin: 0 auto;">
         </p>
         <p align="justify" style="margin: 10px 0;">
-          This visualization helps to see how the GMM algorithm is grouping data points on a dimensionally reduced space, and how the clusters correlate with activity labels. The plot also shows how the data is grouped into 4 clusters by the GMM, and also how the clusters relates to the activity labels.
+          This visualization helps to see how the GMM algorithm is grouping data points on a dimensionally reduced space, and how the clusters correlate with activity labels. The plot also shows how the data is grouped into 4 clusters by the GMM and also how the clusters relate to the activity labels. and
         </p>
       </li>
     </ul>
   </li>
 </ol>
 
-<h3>Conclusion</h3>
+<h3 id="conclusion" >Conclusion</h3>
 
 <p align="justify" style="margin: 10px 0;">
   This project has shown the effectiveness of Gaussian Mixture Models (GMMs) for clustering human activity data from the UCI HAR dataset, while emphasizing the positive impact of dimensionality reduction techniques like PCA and UMAP. By exploring these methods, the project has provided a foundation for further research into the application of GMMs for activity recognition. This study also demonstrates the value of dimensionality reduction in enhancing model performance and computational efficiency, and also in visualizing the results of GMM clustering with the help of UMAP.
 </p>
+
+<!-- REFERENCES -->
+<h2 id="references" style="border-bottom: 2px solid #ddd; padding-bottom: 10px;"> :books: References</h2>
+
+<ol>
+  <li>Zhao, Y., Shrivastava, A., & Tsui, K. Regularized Gaussian Mixture Model for High-Dimensional Clustering. IEEE Transactions on Cybernetics. 2019; 49. https://doi.org/10.1109/TCYB.2018.2846404</li>
+  <li>Popović, B., Janev, M., Krstanović, L., Simić, N., & Delić, V. Measure of Similarity between GMMs Based on Geometry-Aware Dimensionality Reduction. Mathematics. 2022 https://doi.org/10.3390/math11010175</li>
+  <li>San-Segundo-Hernández, R., Córdoba, R., Ferreiros, J., & D’Haro, L. Frequency features and GMM-UBM approach for gait-based person identification using smartphone inertial signals. Pattern Recognit. Lett.. 2016; 73. https://doi.org/10.1016/j.patrec.2016.01.008</li>
+  <li>Chen, Y., Wu, X., Li, T., Cheng, J., Ou, Y., & Xu, M. Dimensionality reduction of data sequences for human activity recognition. Neurocomputing. 2016; 210. https://doi.org/10.1016/j.neucom.2015.11.126</li>
+</ol>
 
 </body>
 </html>
