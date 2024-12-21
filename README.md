@@ -8,17 +8,27 @@ This project is a Human Activity Recognition (HAR) analysis pipeline that proces
 ```
 .
 ├── Data
-│   ├── processed
-│   └── raw
-│       └── (contains raw and processed datasets)
+│   ├── processed
+│   │   ├── data_uci_handled_outliers.csv
+│   │   ├── x_uci_handled_outliers_iqr.csv
+│   │   └── x_uci_handled_outliers_zs.csv
+│   └── raw
+│       └── (contains raw and processed datasets)
 ├── main.py
 ├── modules
-│   └── (contains Python scripts for clustering, data processing, etc.)
+│   ├── clustering.py
+│   ├── data_loading.py
+│   ├── data_processing.py
+│   ├── eda.py
+│   ├── feature_engineering.py
+│   └── utils.py
+├── README.md
 ├── Report.md
 ├── requirements.txt
 └── results
     └── plots
         └── (contains various plot outputs from the analysis)
+
 ```
 
 ## Setup Instructions
