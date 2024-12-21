@@ -103,7 +103,7 @@ Feel free to fork this repository and submit pull requests. Contributions are we
 
 ## Acknowledgements
 
-- [UCI HAR Dataset](https://archive.ics.uci.edu/ml/datasets/human+activity+recognition+with+smartphones): The dataset used in this project.
+- [UCI HAR Dataset](https://archive.ics.uci.edu/dataset/240/human+activity+recognition+using+smartphones): The dataset used in this project.
 - Special thanks to contributors and researchers who made the dataset available.
 
 ## Future Work
