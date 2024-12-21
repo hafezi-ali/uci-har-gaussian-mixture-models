@@ -286,4 +286,3 @@ For more detailed information on installation, running the project, and addition
 </ol>
 
 </body>
-</html>
