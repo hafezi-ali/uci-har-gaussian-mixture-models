@@ -278,7 +278,7 @@
 
 <p align="justify" style="margin: 10px 0;">
 For more detailed information on installation, running the project, and additional insights, please refer to the 
-<a href="GMM_HAR_Analysis.md"> README </a> file.
+<a href="README.md"> README </a> file.
 </p>
 
 <!-- REFERENCES -->

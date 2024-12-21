@@ -2,8 +2,8 @@
 # HAR Analysis Pipeline
 
 This project is a Human Activity Recognition (HAR) analysis pipeline that processes raw sensor data, performs feature engineering, clustering, and provides exploratory data analysis (EDA). It also includes various results, including plots and models used for the analysis.
-
-For a comprehensive analysis using Gaussian Mixture Models (GMMs), please refer to [GMM_HAR_Analysis](./GMM_HAR_Analysis) file.
+.
+For a comprehensive analysis using Gaussian Mixture Models (GMMs), please refer to [GMM HAR Analysis](./GMM_HAR_Analysis.md) file.
 
 ## Project Structure
 
