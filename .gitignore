@@ -1,0 +1,26 @@
+# Ignore Python bytecode files
+__pycache__/
+*.pyc
+*.pyo
+
+# Ignore data files
+Data/
+
+# Ignore results and plots
+#results/
+
+# Ignore any other temporary or generated files
+*.tmp
+*.log
+
+# Ignore environment-specific files
+.env
+.venv/
+venv/
+
+# Ignore OS-specific files
+.DS_Store
+Thumbs.db
+
+# Ignore configuration files
+config/config.json
