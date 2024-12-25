@@ -1,4 +1,4 @@
-# Comparative Analysis of Dimensionality Reduction Techniques for GMM Clustering in Human Activity Recognition
+## Comparative Analysis of Dimensionality Reduction Techniques for GMM Clustering in Human Activity Recognition
 
 This project presents a comprehensive analysis pipeline for Human Activity Recognition (HAR) using sensor data. The pipeline includes processing raw sensor data, feature engineering, and clustering, along with exploratory data analysis (EDA). Key results, such as visualizations and trained models, are provided for in-depth analysis. Furthermore, the project investigates and compares the impact of dimensionality reduction on the effectiveness of Gaussian Mixture Models (GMMs) in high-dimensional spaces. Two methods, Principal Component Analysis (PCA) and Uniform Manifold Approximation and Projection (UMAP), are employed to generate lower-dimensional representations of the data, thereby optimizing GMM performance while mitigating the curse of dimensionality. A comparative analysis of these techniques is provided.
 
