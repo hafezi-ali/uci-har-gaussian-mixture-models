@@ -28,7 +28,6 @@ For detailed results and insights, refer to the [GMM HAR Analysis Report](https:
 │   ├── feature_engineering.py
 │   └── utils.py
 ├── README.md
-├── Report.md
 ├── requirements.txt
 └── results
     └── plots
