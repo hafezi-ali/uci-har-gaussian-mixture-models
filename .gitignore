@@ -5,6 +5,7 @@ __pycache__/
 
 # Ignore data files
 Data/
+Clustering_plots/
 
 # Ignore results and plots
 #results/
@@ -26,3 +27,50 @@ Thumbs.db
 config/config.json
 
 results/
+# Ignore Jupyter notebook checkpoints
+.ipynb_checkpoints/
+
+# Ignore model files and saved results
+*.pkl
+*.joblib
+*.h5
+*.model
+Results/
+
+# Ignore IDE specific files
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# Ignore virtual environment
+__env__/
+env/
+
+# Ignore compiled Python extensions
+*.so
+*.pyd
+*.dll
+
+# Ignore distribution / packaging
+dist/
+build/
+*.egg-info/
+
+# Ignore plots and visualization files
+*.png
+*.jpg
+*.jpeg
+*.svg
+*.html
+
+# Ignore backup files
+*~
+*.bak
+*.swp
+
+*.zip
+*.rar
+*.7z
+*.tar
+*.gz
