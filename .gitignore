@@ -2,6 +2,8 @@
 __pycache__/
 *.pyc
 *.pyo
+.cursorignore
+.gitignore
 
 # Ignore data files
 Data/
