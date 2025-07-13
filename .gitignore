@@ -6,6 +6,8 @@ __pycache__/
 # Ignore data files
 Data/
 Clustering_plots/
+har_analysis_results/
+Results
 
 # Ignore results and plots
 #results/
