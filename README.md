@@ -2,14 +2,14 @@
 
 This project presents a comprehensive analysis pipeline for Human Activity Recognition (HAR) using sensor data. The pipeline includes processing raw sensor data, feature engineering, and clustering, along with exploratory data analysis (EDA). Key results, such as visualizations and trained models, are provided for in-depth analysis. Furthermore, the project investigates and compares the impact of dimensionality reduction on the effectiveness of Gaussian Mixture Models (GMMs) in high-dimensional spaces. Two methods, Principal Component Analysis (PCA) and Uniform Manifold Approximation and Projection (UMAP), are employed to generate lower-dimensional representations of the data, thereby optimizing GMM performance while mitigating the curse of dimensionality. A comparative analysis of these techniques is provided.
 
-## Dataset Information: 
+For detailed results and insights, refer to the [GMM HAR Analysis Report](https://alihafezi.site/uci-har-gaussian-mixture-models/).
+
+### Dataset Information: 
 
 This dataset contains smartphone sensor data from 30 volunteers (aged 19–48) performing six activity classes—**WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, and LAYING**—with a Samsung Galaxy S II on the waist. Accelerometer and gyroscope signals (50Hz) were filtered, segmented into 2.56s windows, and processed to extract time/frequency-domain features. The data is split 70/30 for training/testing, with an updated version including raw signals and transition labels available at the UCI Repository.
 
 ## Dataset Download link:
 https://www.kaggle.com/datasets/uciml/human-activity-recognition-with-smartphones
-
-For detailed results and insights, refer to the [GMM HAR Analysis Report](https://alihafezi.site/uci-har-gaussian-mixture-models/).
 
 ---
 
