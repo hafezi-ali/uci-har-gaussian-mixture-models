@@ -4,11 +4,11 @@ This project presents a comprehensive analysis pipeline for Human Activity Recog
 
 For detailed results and insights, refer to the [GMM HAR Analysis Report](https://alihafezi.site/uci-har-gaussian-mixture-models/).
 
-### Dataset Information: 
+## Dataset Information: 
 
 This dataset contains smartphone sensor data from 30 volunteers (aged 19–48) performing six activity classes—**WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, and LAYING**—with a Samsung Galaxy S II on the waist. Accelerometer and gyroscope signals (50Hz) were filtered, segmented into 2.56s windows, and processed to extract time/frequency-domain features. The data is split 70/30 for training/testing, with an updated version including raw signals and transition labels available at the UCI Repository.
 
-## Dataset Download link:
+### Dataset Download link:
 https://www.kaggle.com/datasets/uciml/human-activity-recognition-with-smartphones
 
 ---
