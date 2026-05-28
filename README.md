@@ -1,198 +1,129 @@
-## Comparative Analysis of Dimensionality Reduction Techniques for GMM Clustering in Human Activity Recognition
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Comparative Analysis of Dimensionality Reduction Techniques for GMM Clustering in Human Activity Recognition</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --color-bg: #0f172a;
+      --color-card: #1e293b;
+      --color-card-hover: #334155;
+      --color-text: #f1f5f9;
+      --color-text-muted: #94a3b8;
+      --color-primary: #3b82f6;
+      --color-primary-hover: #2563eb;
+      --color-secondary: #8b5cf6;
+      --color-accent: #06b6d4;
+      --color-success: #10b981;
+      --color-warning: #f59e0b;
+      --color-danger: #ef4444;
+      --color-border: #334155;
+      --color-code-bg: #0b1220;
+      --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+      --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+      --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
+      --radius-sm: 0.375rem;
+      --radius-md: 0.5rem;
+      --radius-lg: 0.75rem;
+      --radius-xl: 1rem;
+      --transition: all 0.2s ease-in-out;
+    }
 
-This project presents a comprehensive analysis pipeline for Human Activity Recognition (HAR) using sensor data. The pipeline includes processing raw sensor data, feature engineering, and clustering, along with exploratory data analysis (EDA). Key results, such as visualizations and trained models, are provided for in-depth analysis. Furthermore, the project investigates and compares the impact of dimensionality reduction on the effectiveness of Gaussian Mixture Models (GMMs) in high-dimensional spaces. Two methods, Principal Component Analysis (PCA) and Uniform Manifold Approximation and Projection (UMAP), are employed to generate lower-dimensional representations of the data, thereby optimizing GMM performance while mitigating the curse of dimensionality. A comparative analysis of these techniques is provided.
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-Dataset Information: 
-This dataset contains smartphone sensor data from 30 volunteers (aged 19–48) performing six activity classes—**WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, and LAYING**—with a Samsung Galaxy S II on the waist. Accelerometer and gyroscope signals (50Hz) were filtered, segmented into 2.56s windows, and processed to extract time/frequency-domain features. The data is split 70/30 for training/testing, with an updated version including raw signals and transition labels available at the UCI Repository.
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--color-bg);
+      color: var(--color-text);
+      line-height: 1.7;
+      padding: 2rem 1rem;
+    }
 
-Download link:
-https://www.kaggle.com/datasets/uciml/human-activity-recognition-with-smartphones
+    @media (min-width: 768px) {
+      body {
+        padding: 3rem 2rem;
+      }
+    }
 
-For detailed results and insights, refer to the [GMM HAR Analysis Report](https://alihafezi.site/uci-har-gaussian-mixture-models/).
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
 
----
+    /* Header Styles */
+    header {
+      text-align: center;
+      padding: 2.5rem 1.5rem;
+      margin-bottom: 2rem;
+      background: linear-gradient(135deg, var(--color-card), var(--color-card-hover));
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--color-border);
+      box-shadow: var(--shadow-lg);
+    }
 
-## Project Overview
+    h1 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1.3;
+    }
 
-### Directory Structure
+    @media (min-width: 768px) {
+      h1 {
+        font-size: 2.25rem;
+      }
+    }
 
-```
-.
-├── Data
-│   ├── processed
-│   │
-│   │
-│   │ 
-│   └── raw
-│       └── (contains raw Human Activity Recognition with Smartphones dataset files)
-├── main.py
-├── modules
-│   ├── clustering.py
-│   ├── data_loading.py
-│   ├── data_processing.py
-│   ├── eda.py
-│   ├── feature_engineering.py
-│   └── utils.py
-├── README.md
-├── requirements.txt
-└── results
-    └── plots
-        └── (contains various plot outputs from the analysis)
-```
+    .subtitle {
+      color: var(--color-text-muted);
+      font-size: 1.1rem;
+      max-width: 800px;
+      margin: 0 auto 1.5rem;
+    }
 
----
+    /* Content Sections */
+    section {
+      background: var(--color-card);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem;
+      margin-bottom: 1.5rem;
+      border: 1px solid var(--color-border);
+      box-shadow: var(--shadow-md);
+      transition: var(--transition);
+    }
 
-## Setup Instructions
+    section:hover {
+      border-color: var(--color-primary);
+      transform: translateY(-2px);
+    }
 
-### Step 1: Clone the Repository
+    h2 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin: 0 0 1.25rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 2px solid var(--color-border);
+      color: var(--color-text);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
 
-```bash
-git clone https://github.com/yourusername/har_analysis_pipeline.git
-cd har_analysis_pipeline
-```
-
-### Step 2: Create and Activate a Virtual Environment
-
-It is recommended to use a virtual environment to manage dependencies.
-
-```bash
-python3 -m venv venv
-source venv/bin/activate
-```
-
-### Step 3: Install Dependencies
-
-Install the required libraries listed in `requirements.txt`.
-
-```bash
-pip install -r requirements.txt
-```
-
-### Step 4: Run the Main Script
-
-Execute the analysis pipeline by running the `main.py` script:
-
-```bash
-python main.py
-```
-
----
-
-## Data Details
-
-### Raw Data
-- **activity_labels.txt**: Maps activity IDs to activity names.
-- **data_uci.csv**: Original HAR dataset.
-- **subject_test.txt**, **subject_train.txt**: Identifiers for test/train subjects.
-- **X_test.txt**, **X_train.txt**: Sensor readings for test/train datasets.
-- **y_test.txt**, **y_train.txt**: Activity labels for test/train datasets.
-
-### Processed Data
-- **data_uci_handled_outliers.csv**: Data with outliers addressed.
-- **x_uci_handled_outliers_iqr.csv**: Outliers handled using IQR.
-- **x_uci_handled_outliers_zs.csv**: Outliers handled using Z-scores.
-
-### Results
-Contains visualization outputs such as activity distributions, comparison plots, and dimensionality reduction visualizations (e.g., PCA/UMAP).
-
----
-
-## Key Components
-
-### `main.py`
-
-The primary script orchestrating the pipeline. It includes data loading, preprocessing, EDA, feature engineering, dimensionality reduction, clustering, and visualization.
-
-#### Workflow Highlights:
-1. **Setup:** Initializes directories for saving results.
-2. **Data Loading & Preprocessing:**
-   - Loads raw or processed data.
-   - Handles missing values and outliers.
-   - Saves cleaned datasets and visualizations.
-3. **EDA:** Generates data summaries and visualizations.
-4. **Feature Engineering:**
-   - Scales data.
-   - Applies dimensionality reduction techniques (UMAP, PCA).
-5. **Clustering:**
-   - Uses GMM for clustering with optimal cluster counts based on BIC/AIC criteria.
-   - Visualizes clusters and class distributions.
-6. **Completion:** Outputs results and a success message.
-
----
-
-### Modular Design
-
-#### `data_loading.py`
-- **Purpose:** Loads raw and processed data into pandas DataFrames.
-- **Key Functions:**
-  - `load_data()`: Combines and prepares raw data.
-  - `load_cleaned_data()`: Loads pre-cleaned datasets.
-
-#### `clustering.py`
-- **Purpose:** Implements GMM clustering and evaluates models.
-- **Key Functions:**
-  - `criteria_values()`: Calculates BIC/AIC values for different cluster counts.
-  - `perform_gmm_clustering()`: Applies GMM clustering.
-  - `plot_criteria_values()`: Visualizes BIC/AIC trends.
-
-#### `data_processing.py`
-- **Purpose:** Cleans and preprocesses data.
-- **Key Functions:**
-  - `detect_missing_values()`: Identifies missing data.
-  - `handle_outliers()`: Manages outliers using IQR/Z-score methods.
-  - `plot_outlier_handling()`: Visualizes outlier handling with boxplots, Q-Q plots, and distributions.
-
-#### `eda.py`
-- **Purpose:** Performs exploratory data analysis.
-- **Key Functions:**
-  - `perform_eda()`: Generates data summaries and distributions.
-
-#### `feature_engineering.py`
-- **Purpose:** Prepares data for analysis.
-- **Key Functions:**
-  - `feature_scaling()`: Normalizes features.
-  - `apply_optimal_pca()`: Reduces dimensionality with PCA.
-  - `umap_standard_embedding()`: Applies UMAP for embedding.
-
-#### `utils.py`
-- **Purpose:** Provides utility functions.
-- **Key Functions:**
-  - `plot_2d_scatter()`: Creates 2D scatter plots for visualization.
-
----
-
-## License
-
-This project is licensed under the [MIT License](./LICENSE). For more information, see the `LICENSE` file.
-
----
-
-## Contributing
-
-Contributions are welcome! Feel free to fork the repository and submit pull requests.
-
----
-
-## Acknowledgements
-
-- [UCI HAR Dataset](https://archive.ics.uci.edu/dataset/240/human+activity+recognition+using+smartphones) for the dataset used in this project.
-- Thanks to contributors and researchers for making this project possible.
-
----
-
-## Future Work
-
-- Integration of additional machine learning models.
-- Exploration of advanced clustering methods.
-- Expansion of analysis to include real-time activity recognition<!-- CREDITS -->
-
-
-<h2 id="credits"> :scroll: Credits</h2>
-
-Ali Hafezi
-
-[![GitHub Badge](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/hafezi-ali)
-[![X Badge](https://img.shields.io/badge/X-000000?style=for-the-badge&logo=x&logoColor=white)](https://x.com/hafezi_alii)
-[![LinkedIn Badge](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/alihafezii/)
-[![Website Badge](https://img.shields.io/badge/Website-4285F4?style=for-the-badge&logo=world&logoColor=white)](https://alihafezi.site)
-
+    h2::before {
+      content: "";
+      display: inline-block;
+      width: 4px;
+      height: 1.25rem;
+      background: linear-gradient(to bottom, var(--
