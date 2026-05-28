@@ -14,11 +14,11 @@ For detailed results and insights, refer to the [GMM HAR Analysis Report](https:
 .
 ├── Data
 │   ├── processed
-│   │   ├── data_uci_handled_outliers.csv
-│   │   ├── x_uci_handled_outliers_iqr.csv
-│   │   └── x_uci_handled_outliers_zs.csv
+│   │
+│   │
+│   │ 
 │   └── raw
-│       └── (contains raw and processed datasets)
+│       └── (contains raw Human Activity Recognition with Smartphones dataset files)
 ├── main.py
 ├── modules
 │   ├── clustering.py
